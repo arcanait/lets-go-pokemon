@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IFetcherParams } from "../model";
 
-export const fetcher = (url: string, params: IFetcherParams) =>
+export const fetcherPokemon = (url: string, params: IFetcherParams) =>
   axios
     .get(url, {
       headers: {
@@ -11,6 +11,6 @@ export const fetcher = (url: string, params: IFetcherParams) =>
       validateStatus: (status) => status >= 200 && status < 400,
     })
     .then((res) => {
-      return res.data.data;
+      return res.data;
     })
     .catch((e) => e.response.data);

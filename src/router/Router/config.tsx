@@ -1,4 +1,4 @@
-import { lazy, LazyExoticComponent, ComponentType } from "react";
+import { lazy } from "react";
 import { ROUTES } from "../../constants/routes";
 
 //TODO: export interface in model file

@@ -1,27 +1,32 @@
-import { fetcher } from "../fetchers/fetcher";
-import { IFetcherParams } from "../model";
+import { basicPokemonInformation, IFetcherParams } from "../model";
 import useSWRInfinite from "swr/infinite";
-// import { IResponseHook } from "../model";
+import { fetcherAllPokemon } from "../fetchers/fetcherAllPokemon";
 
 function useGetAllPokemon(params: IFetcherParams) {
   const url = "https://pokeapi.co/api/v2/pokemon/";
 
-  const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
+  const { data, error, mutate, isValidating } = useSWRInfinite(
     () => `${url}?limit=${params.limit}&offset=${params.offset}`,
-    fetcher
+    fetcherAllPokemon
   );
   // url, () => fetcher(url, params)
-  const issues = data ? [].concat(...data) : [];
+  const pokemonList: basicPokemonInformation[] = data ? [].concat(...data) : [];
   const isLoadingInitialData = !data && !error;
   const isLoadingMore =
     isLoadingInitialData ||
-    (size > 0 && data && typeof data[size - 1] === "undefined");
-  const isEmpty = data?.[0]?.length === 0;
-  const isReachingEnd =
-    isEmpty || (data && data[data.length - 1]?.length < params.limit);
-  const isRefreshing = isValidating && data && data.length === size;
-  console.log(data, error, mutate, size, setSize, isValidating);
-  return {};
+    (data && typeof data[data.length - 1] === "undefined");
+  const isEmpty = !data?.length;
+  const isReachingEnd = isEmpty || (data && data.length < params.limit);
+
+  return {
+    error,
+    mutate,
+    pokemonList,
+    isValidating,
+    isReachingEnd,
+    isLoadingMore,
+    isLoadingInitialData,
+  };
 }
 
 export { useGetAllPokemon };

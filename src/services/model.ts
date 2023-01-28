@@ -1,15 +1,14 @@
-interface resultsType {
+export interface basicPokemonInformation {
   name: string;
   url: string;
 }
-
-export interface IResponseAllPokemon {
-  count: number;
-  next: string;
-  previous: string;
-  results: resultsType[];
-}
-
+//TODO: delete if don't use this
+// export interface IResponseAllPokemon {
+//   count: number;
+//   next: string;
+//   previous: string;
+//   results: basicPokemonInformation[];
+// }
 export interface IFetcherParams {
-  [k: string]: string | number;
+  [k: string]: any;
 }
