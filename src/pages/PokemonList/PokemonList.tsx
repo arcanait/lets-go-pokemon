@@ -1,13 +1,14 @@
 import { FC, Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { useGetAllPokemon } from "../../services/hooks/useGetAllPokemon";
 import { basicPokemonInformation } from "../../services/model";
-import PokemonDetail from "../PokemonDetail/PokemonDetail";
+import PokemonCard from "../../components/display/PokemonCard/PokemonCard";
 import { PokemonListWrapper } from "./styles";
+import { Grid } from "../../components/genericStyles";
 
 interface PokemonListProps {}
 
 const PokemonList: FC<PokemonListProps> = () => {
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(20);
   const [offset, setOffset] = useState(0);
   const [currentPokemonList, setCurrentPokemonList] = useState<
     basicPokemonInformation[]
@@ -37,7 +38,6 @@ const PokemonList: FC<PokemonListProps> = () => {
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
           setOffset((previousOffset) => previousOffset + limit);
-          console.log("se ejecuta");
         }
       });
       if (node) observer.current.observe(node);
@@ -50,9 +50,11 @@ const PokemonList: FC<PokemonListProps> = () => {
       {currentPokemonList.map((pokemon, index) => (
         <Fragment key={`${pokemon.name}_${index}_${pokemon.url}`}>
           {currentPokemonList.length - 1 === index ? (
-            <PokemonDetail ref={lastPokemonRef} urlPokemon={pokemon.url} />
+            <div ref={lastPokemonRef}>
+              <PokemonCard urlPokemon={pokemon.url} />
+            </div>
           ) : (
-            <PokemonDetail urlPokemon={pokemon.url} />
+            <PokemonCard urlPokemon={pokemon.url} />
           )}
         </Fragment>
       ))}
