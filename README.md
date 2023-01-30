@@ -2,9 +2,21 @@
 
 Este proyecto es realizado con el fin de incluir todo el conocimiento adquirido para crear un SPA utilizando pokeapi
 
+## Librerías utilizadas
+
+* React
+* Styled components
+* Redux
+* SWR
+
+
 ## Corriendo el proyecto
 
 En el directorio del proyecto correr:
+
+### `npm install`
+
+Para instalar las dependencias de las librerías utilizadas
 
 ### `npm start`
 
