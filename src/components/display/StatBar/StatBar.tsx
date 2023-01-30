@@ -23,8 +23,4 @@ const StatBar: FC<StatBarProps> = ({ stat, maxStat, label, color, bright }) => {
   );
 };
 
-StatBar.defaultProps = {};
-
-StatBar.propTypes = {};
-
 export default StatBar;

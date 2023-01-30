@@ -2,19 +2,21 @@ import { FC, FormEvent, KeyboardEvent, useState } from "react";
 import Search from "../../icons/Search";
 import { InputSearchWrapper } from "./styles";
 
-interface InputSearchProps {}
+interface InputSearchProps {
+  handleChange: (content: string) => void;
+}
 
-const InputSearch: FC<InputSearchProps> = () => {
+const InputSearch: FC<InputSearchProps> = ({ handleChange }) => {
   const [content, setContent] = useState("");
 
   const searchContentWhenEnter = (e: KeyboardEvent<HTMLElement>) => {
     if (e.which === 13) {
-      console.log("guardar", content);
+      handleChange(content);
     }
   };
 
   const searchContentWhenClick = () => {
-    console.log("guardar", content);
+    handleChange(content);
   };
 
   const addValueToState = (e: FormEvent<HTMLInputElement>) => {

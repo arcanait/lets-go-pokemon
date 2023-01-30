@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 
 // Components
 import Label from "../Label/Label";
@@ -69,14 +69,16 @@ const PokemonCard: FC<PokemonCardProps> = ({ urlPokemon }) => {
       <div className="content-container">
         <img src={getImagePokemon()} alt="pokemon" />
         <div className="stats-container">
-          {getStatList().map((stat: any) => (
-            <StatBar
-              color={getColorByStat(stat.label)}
-              stat={stat.value}
-              maxStat={getMaxStatByStat(stat.label)}
-              label={stat.label}
-              bright={isBrightCard()}
-            />
+          {getStatList().map((stat: any, index: number) => (
+            <Fragment key={`${stat.value}_${index}`}>
+              <StatBar
+                color={getColorByStat(stat.label)}
+                stat={stat.value}
+                maxStat={getMaxStatByStat(stat.label)}
+                label={stat.label}
+                bright={isBrightCard()}
+              />
+            </Fragment>
           ))}
         </div>
       </div>

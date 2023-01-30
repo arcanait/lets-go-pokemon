@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MIN_WIDTH_QUERIES } from "../../../constants/routes";
+import { MIN_WIDTH_QUERIES } from "../../../constants/constants";
 interface IPokemonCardWrapper {
   backgroundColor: string;
 }

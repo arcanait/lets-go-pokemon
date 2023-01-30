@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { MIN_WIDTH_QUERIES } from "../../../constants/routes";
+import { MIN_WIDTH_QUERIES } from "../../../constants/constants";
+
 export const HeaderWrapper = styled.div`
   background-color: ${({ theme }) => theme.blue};
   height: 120px;

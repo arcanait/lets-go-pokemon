@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MIN_WIDTH_QUERIES } from "../constants/routes";
+import { MIN_WIDTH_QUERIES } from "../constants/constants";
 
 export const Grid = styled.div`
   display: grid;
@@ -19,5 +19,8 @@ export const Grid = styled.div`
 `;
 
 export const ChildrenContainer = styled.div`
-  padding-top: 60px;
+  padding-top: 120px;
+  @media ${MIN_WIDTH_QUERIES.TABLET.query} {
+    padding-top: 60px;
+  }
 `;
