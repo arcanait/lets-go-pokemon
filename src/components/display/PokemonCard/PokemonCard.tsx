@@ -61,7 +61,7 @@ const PokemonCard: FC<PokemonCardProps> = ({ urlPokemon }) => {
       <Label
         fontFamily="pokemon"
         color="yellow"
-        fontSize="s-16"
+        fontSize="s-24"
         classLabel="title-name"
       >
         {name}

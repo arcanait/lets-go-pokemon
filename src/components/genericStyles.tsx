@@ -3,7 +3,7 @@ import { MIN_WIDTH_QUERIES } from "../constants/routes";
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-column-gap: 24px;
   grid-row-gap: 24px;
   @media ${MIN_WIDTH_QUERIES.TABLET.query} {
@@ -16,4 +16,8 @@ export const Grid = styled.div`
     grid-column-gap: 24px;
     grid-row-gap: 24px;
   }
+`;
+
+export const ChildrenContainer = styled.div`
+  padding-top: 60px;
 `;
