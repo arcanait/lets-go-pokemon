@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 # Lets Go Pokemon
 
 Este proyecto es realizado con el fin de incluir todo el conocimiento adquirido para crear un SPA utilizando pokeapi
@@ -22,3 +24,4 @@ Para instalar las dependencias de las librerías utilizadas
 
 Se correrá el aplicativo en el modo de desarrollo.
 Abrir el puerto 3000 en el navegador. [http://localhost:3000](http://localhost:3000)
+>>>>>>> 7006552680ff1b226a791817b5ac246bbb478f57

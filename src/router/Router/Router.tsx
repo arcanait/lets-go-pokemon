@@ -1,6 +1,6 @@
 import { FC, Suspense } from "react";
 
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 
 // Components
 import Layout from "../../layout/Layout";
@@ -19,6 +19,7 @@ const Router: FC = () => {
                 element={<route.component />}
               />
             ))}
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
       </Layout>

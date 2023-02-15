@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import { ChildrenContainer } from "../components/genericStyles";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import SideMenu from "./components/SideMenu/SideMenu";
@@ -12,7 +13,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <>
       <Header></Header>
       <SideMenu></SideMenu>
-      {children}
+      <ChildrenContainer>{children}</ChildrenContainer>
       <Footer></Footer>
     </>
   );

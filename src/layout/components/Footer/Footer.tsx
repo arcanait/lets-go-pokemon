@@ -7,8 +7,4 @@ const Footer: FC<FooterProps> = () => {
   return <FooterWrapper></FooterWrapper>;
 };
 
-Footer.defaultProps = {};
-
-Footer.propTypes = {};
-
 export default Footer;
