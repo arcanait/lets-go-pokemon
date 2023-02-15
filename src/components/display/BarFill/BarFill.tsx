@@ -20,8 +20,4 @@ const BarFill: FC<BarFillProps> = ({ stat, maxStat, color }) => {
   );
 };
 
-BarFill.defaultProps = {};
-
-BarFill.propTypes = {};
-
 export default BarFill;

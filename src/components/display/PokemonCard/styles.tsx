@@ -11,6 +11,7 @@ export const PokemonCardWrapper = styled.div<IPokemonCardWrapper>`
   flex-direction: column;
   max-width: 100%;
   box-sizing: border-box;
+  height: 170px;
   cursor: pointer;
   .title-name {
     text-align: center;

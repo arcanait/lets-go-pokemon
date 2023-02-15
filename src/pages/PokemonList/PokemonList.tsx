@@ -12,6 +12,7 @@ import { basicPokemonInformation } from "../../services/model";
 import { useGetAllPokemon } from "../../services/hooks/useGetAllPokemon";
 
 import { PokemonListWrapper } from "./styles";
+import Window from "../../components/display/Window/Window";
 
 interface PokemonListProps {}
 
@@ -64,17 +65,19 @@ const PokemonList: FC<PokemonListProps> = () => {
 
   return (
     <PokemonListWrapper>
-      {currentPokemonList.map((pokemon, index) => (
-        <Fragment key={`${pokemon.name}_${index}_${pokemon.url}`}>
-          {currentPokemonList.length - 1 === index ? (
-            <div ref={lastPokemonRef}>
+      <Window rowHeight={170} gap={32}>
+        {currentPokemonList.map((pokemon, index) => (
+          <li key={`${pokemon.name}_${index}_${pokemon.url}`}>
+            {currentPokemonList.length - 1 === index ? (
+              <div ref={lastPokemonRef}>
+                <PokemonCard urlPokemon={pokemon.url} />
+              </div>
+            ) : (
               <PokemonCard urlPokemon={pokemon.url} />
-            </div>
-          ) : (
-            <PokemonCard urlPokemon={pokemon.url} />
-          )}
-        </Fragment>
-      ))}
+            )}
+          </li>
+        ))}
+      </Window>
     </PokemonListWrapper>
   );
 };

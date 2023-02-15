@@ -20,6 +20,7 @@ export const Grid = styled.div`
 
 export const ChildrenContainer = styled.div`
   padding-top: 120px;
+  height: 100vh;
   @media ${MIN_WIDTH_QUERIES.TABLET.query} {
     padding-top: 60px;
   }
